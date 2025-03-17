@@ -34,12 +34,21 @@ class Popup {
     show() {
         this.isOpen = true;
         this.popup.classList.remove('popup_hide');
+
+        document.body.style.overflow = 'hidden';
+        // document.body.style.top = `-${window.scrollY}px`;
     }
 
     hide() {
         this.isOpen = false;
         this.popup.classList.add('popup_hide');
+        document.body.style.overflow = 'auto';
         this.clean();
+
+        // const scrollY = document.body.style.top;
+        // document.body.style.position = '';
+        // document.body.style.top = '';
+        // window.scrollTo(0, parseInt(scrollY));
     }
 
     clean() {

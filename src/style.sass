@@ -21,6 +21,8 @@ img
 
 body
     overflow-x: hidden
+    width: 100vw
+
 #app
    width: 100%
    position: relative
@@ -149,6 +151,11 @@ input
             grid-column: span 12
 
 @media screen and (max-width: 940px)
+    .popup
+        &__container
+            grid-template-columns: repeat(8, 60px)
+        &__content
+            grid-column: 1 / -1
     .header 
         &__content
             grid-template-columns: repeat(8, 60px)
@@ -215,6 +222,11 @@ input
                 grid-column: span 8
 
 @media screen and (max-width: 620px)
+    .popup
+        &__container
+            grid-template-columns: repeat(6, 60px)
+        &__content
+            grid-column: 1 / -1
     .header 
         &__content
             grid-template-columns: repeat(6, 60px)
@@ -324,11 +336,17 @@ input
                 grid-column: span 6
 
 @media screen and (max-width: 480px)
+    .popup
+        &__container
+            grid-template-columns: repeat(4, 1fr)
+        &__content
+            grid-column: 1 / -1
     .header 
         &__content
             grid-template-columns: repeat(4, 1fr)
         &__info
             grid-column: 1 / -1
+            padding: 31px 10px 40px
 
     .main
         &__content
