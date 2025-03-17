@@ -1,0 +1,17 @@
+@use "../../styles/variables" as var
+@use "../../styles/mixins" as *
+
+.input-checkbox
+    width: 16px
+    height: 16px
+    accent-color: var.$formColor
+    @include TextInfoFont
+
+    &__wrapper
+        width: 100%
+        display: flex
+        align-items: center
+    
+    &__label
+        @include TextInfoFont
+        margin-left: 10px

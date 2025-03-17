@@ -1,0 +1,22 @@
+@mixin TextDescrFont
+    font-family: Source Code Pro
+    font-weight: 400
+    
+@mixin TextInfoFont
+    font-family: Source Code Pro
+    font-weight: 500
+
+@mixin TextHeadersFont
+    font-family: Source Code Pro
+    font-weight: 700
+
+@mixin ConfInputNames($fs, $margin)
+    @include TextInfoFont
+    display: block
+    font-size: $fs
+    margin-bottom: $margin
+
+@mixin ConfInput
+    @include TextInfoFont
+    font-size: 16px
+    padding: 10px

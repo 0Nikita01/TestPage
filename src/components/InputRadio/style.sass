@@ -1,0 +1,51 @@
+@use "../../styles/variables" as var
+@use "../../styles/mixins" as *
+
+.radio
+    &__block
+        display: flex
+        justify-content: space-around
+        align-items: center
+
+    &__wrapper_error::after
+        content: "Невыбранное поле"
+        position: absolute
+        bottom: -15px
+        color: red
+        @include TextDescrFont
+        font-size: 14px
+
+    &__wrapper
+        display: flex
+        justify-content: start   
+        padding: 10px 0
+        font-size: 16px
+        @include TextInfoFont
+
+        input
+            padding: 0
+            margin: 0
+
+            &[name="language"]
+                -webkit-appearance: none
+                -moz-appearance: none
+                appearance: none
+
+                border: 1px solid var.$phColor
+                width: 16px
+                height: 16px
+                border-radius: 50%
+                -webkit-transition: -webkit-transform .25s cubic-bezier(.8, 0, 1, 1)
+
+                &[checked]
+                    background-color: var.$formColor
+                    border-color: var.$formColor
+                &:active
+                    -webkit-transform:	scale(1.5)
+                    -webkit-transition: webkit-transform .1s cubic-bezier(0, 0, .2, 1)
+                    
+
+        label
+            margin-right: 34px
+            margin-left: 5px
+            display: inline

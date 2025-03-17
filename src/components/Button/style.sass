@@ -1,0 +1,23 @@
+@use "../../styles/variables" as var
+@use "../../styles/mixins" as *
+    
+.input-button__wrapper
+    width: 100%
+
+    button[name='send-form']
+        appearance: none
+        width: 100%
+        padding: 10px 37px
+        font-size: 18px
+        border: none
+        background-color: var.$formColor
+        color: #fff
+        @include TextDescrFont
+        box-shadow: 6px 5px 0 0 #000000
+        transition: transform .1s ease-out, box-shadow .1s ease-in-out
+
+        &:active
+            transform: translate(6px, 5px)
+            box-shadow: 0px 0px 0 0 #000000
+
+    

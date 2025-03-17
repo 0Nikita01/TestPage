@@ -1,0 +1,22 @@
+@use "../../styles/variables" as var
+@use "../../styles/mixins" as *
+    
+.input-text__wrapper
+    width: 100%
+
+    &_error::after
+        content: "Некорректный ввод"
+        color: red
+        padding-left: 10px
+        @include TextDescrFont
+        font-size: 14px
+
+    input
+        width: 100%
+        height: 40px
+        border: 1px solid #000000
+        border-radius: none
+        @include ConfInput
+        &:focus
+            border-radius: none
+            border: 1px solid var.$formColor

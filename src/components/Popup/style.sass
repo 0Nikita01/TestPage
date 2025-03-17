@@ -1,0 +1,67 @@
+@use "../../styles/variables" as var
+@use "../../styles/mixins" as *
+    
+.popup
+    position: absolute
+    display: block
+    background: rgba(0, 0, 0, 0.5)
+    width: 100vw
+    height: 100vh
+    z-index: 999
+    top: 0
+
+    &__container
+        display: grid
+        grid-template-columns: repeat(12, 60px)
+        column-gap: 20px
+        justify-content: center
+        justify-items: center
+        align-items: center
+        height: 100%
+        
+    &__content
+        grid-column: span 12
+        background: #fff
+        // width: 500px
+        // height: 500px
+    
+    &__close
+        &-wrapper
+            width: 100%
+            display: flex
+            justify-content: end
+            padding: 10px
+        &-button
+            width: 25px
+            height: 25px
+            cursor: pointer
+            position: relative
+            &::before
+                content: ""
+                position: absolute
+                top: 50%
+                
+                border: 1px solid var.$formColor
+                height: 1px
+                width: 100%
+                rotate: -45deg
+            &::after
+                content: ""
+                position: absolute
+                top: 50%
+                height: 1px
+                width: 100%
+                rotate: 45deg
+                border: 1px solid var.$formColor
+
+    &__info
+        padding: 20px 50px 60px
+        p
+            @include TextDescrFont
+    &__header
+        @include TextHeadersFont
+        padding: 0px 50px
+        font-size: 18px
+
+    &_hide
+        display: none

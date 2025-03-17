@@ -1,0 +1,58 @@
+@use '../../styles/mixins' as *
+    
+$slider-color: blue
+$track-color: #ccc
+$thumb-size: 12px
+$track-height: 2px
+$input-fs: 16px
+$input-pad: 10px
+
+.range-slider
+    width: 100%
+
+.range-container
+    display: flex
+    justify-content: space-between
+    width: 100%
+    margin-bottom: 19px
+
+    input
+        width: 40%
+        text-align: left
+        @include ConfInput
+
+.slider-container
+    position: relative
+    width: 100%
+
+    input[type="range"] 
+        position: absolute
+        height: $track-height
+        width: 100%
+        -webkit-appearance: none
+        appearance: none
+        background: transparent
+        pointer-events: none
+        padding: 0
+        margin: 0
+
+        &::-webkit-slider-runnable-track
+            height: $track-height
+            background: $track-color
+            border-radius: 0px
+
+        &::-webkit-slider-thumb
+            -webkit-appearance: none
+            width: $thumb-size
+            height: $thumb-size
+            background: $slider-color
+            border-radius: 50%
+            position: relative
+            margin-top: -5px
+            pointer-events: auto
+            z-index: 2
+
+.slider-track
+    position: absolute
+    height: $track-height
+    background: $slider-color
