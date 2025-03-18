@@ -76,7 +76,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 	resizeImage()
 
-	addEventListener("resize", () => {
+	window.addEventListener("resize", () => {
 		resizeImage()
 	});
 });
