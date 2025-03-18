@@ -73,7 +73,26 @@ window.addEventListener('DOMContentLoaded', () => {
 			console.log('close')
 		}
 	});
+
+	resizeImage()
+
+	addEventListener("resize", () => {
+		resizeImage()
+	});
 });
+
+function resizeImage() {
+	const header__content = document.querySelector('.header__content');
+	const header_image = document.querySelector('.header__image');
+	const header__content_width = header__content.clientWidth;
+
+	console.log('resize')
+	if (window.outerWidth >= 648) {
+		header_image.style.width = ((window.outerWidth - header__content_width)/2 + header__content_width * 0.3) + 'px';
+	} else {
+		header_image.style.width = '100%';
+	}
+}
 
 const getCurrentYear = () => {
 	return new Date().getFullYear();

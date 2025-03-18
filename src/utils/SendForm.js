@@ -14,10 +14,6 @@ function FormHandler(components) {
     });
 }
 
-const serializeForm = () => {
-
-}
-
 function openPopup(component, data) {
     const infoBlock = component.popup.querySelector('.popup__info');
 
@@ -31,8 +27,6 @@ function openPopup(component, data) {
 }
 
 function getDataForm(form, components) {
-
-    //form.querySelector('.range-container')
     let formData = new FormData();
     let hasError = false
 
