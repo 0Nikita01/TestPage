@@ -86,7 +86,6 @@ function resizeImage() {
 	const header_image = document.querySelector('.header__image');
 	const header__content_width = header__content.clientWidth;
 
-	console.log('resize')
 	if (window.outerWidth >= 648) {
 		header_image.style.width = ((window.outerWidth - header__content_width)/2 + header__content_width * 0.3) + 'px';
 	} else {
